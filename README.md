@@ -25,4 +25,5 @@
 * *=	곱해서 저장	x *= 2	x = x * 2
 * /=	나눠서 저장	x /= 2	x = x / 2
 * %=	나머지 저장	x %= 2	x = x % 2
-$ sass --watch basic/styles/basic3.scss:basic/styles/basic.css
+* $ sass --watch basic/styles/basic3.scss:basic/styles/basic.css
+* //사용자가 입력한 값을 가져올땐 value 쓴다
