@@ -1,0 +1,8 @@
+#slide_container {
+  background-color: pink;
+}
+#slide_container .slide_wrap .slide1 {
+  color: aqua;
+}
+
+/*# sourceMappingURL=basic3.csss.map */

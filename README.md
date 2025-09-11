@@ -25,3 +25,4 @@
 * *=	곱해서 저장	x *= 2	x = x * 2
 * /=	나눠서 저장	x /= 2	x = x / 2
 * %=	나머지 저장	x %= 2	x = x % 2
+$ sass --watch basic/styles/basic3.scss:basic/styles/basic.css
