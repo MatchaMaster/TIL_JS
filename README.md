@@ -27,3 +27,16 @@
 * %=	나머지 저장	x %= 2	x = x % 2
 * $ sass --watch basic/styles/basic3.scss:basic/styles/basic.css
 * //사용자가 입력한 값을 가져올땐 value 쓴다
+## 콜백함수 정리
+### 매개변수 없는 콜백함수 호출
+* `DOM.addEventListner('이벤트',콜백함수)`
+* `function 콜백함수(){return 반복실행}`
+
+### 매개변수가 있는 콜백함수호출
+* `DOM.addEventListner('이벤트',()=>{콜백함수(매개변수)})`
+* `DOM.addEventListner('이벤트',function(){콜백함수(매개변수)})`
+* `function 콜백함수(매개변수){return 반복실행}`
+
+### 매개변수가 있는 콜백함수 호출(클로저 활용)
+* `DOM.addEventListner('이벤트',콜백함수(매개변수))`
+* `function 콜백함수(매개변수{return function(){반복실행}})`

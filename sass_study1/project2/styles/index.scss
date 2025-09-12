@@ -1,0 +1,36 @@
+//1360*750
+// #ffffd4 배경색깔
+@use './common.scss' as *;
+.visual_wrap {  @include display;
+    .slide_container { 
+        
+        @include width_height;
+        background-color: $color-back;
+        background-image: url(../images/kakao_study.png);
+        background-repeat: no-repeat;
+        background-size: 800px;
+        background-position: right bottom;
+        .slide { padding: 80px 100px;}
+        .slide1 {
+            .title_contents { 
+            h1{ @include font_h1}
+            p {@include font_p}
+            }
+            .bnr_link { margin:200px 0 0;
+                .education_link { @include btn_black;
+                }
+                .news_btn { @include btn_white;}
+            }
+        }
+    }
+    .page_btn { @include page_btn;
+        .pagenation {}
+        .current {}
+        .bar { @include bar;}
+        .total {}
+        .btn_g {
+            #prev{}
+            #next{}
+        }
+        }
+    }

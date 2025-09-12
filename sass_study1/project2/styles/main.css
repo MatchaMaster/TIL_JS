@@ -1,0 +1,70 @@
+.visual_wrap {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.visual_wrap .slide_container {
+  width: 1360px;
+  min-width: 320px;
+  height: 750px;
+  margin: 50px auto 0;
+  background-color: #ffffd4;
+  background-image: url(../images/kakao_study.png);
+  background-repeat: no-repeat;
+  background-size: 800px;
+  background-position: right bottom;
+}
+.visual_wrap .slide_container .slide {
+  padding: 80px 100px;
+}
+.visual_wrap .slide_container .slide1 .title_contents h1 {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 130%;
+}
+.visual_wrap .slide_container .slide1 .title_contents p {
+  margin: 20px 0 0;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 130%;
+}
+.visual_wrap .slide_container .slide1 .bnr_link {
+  margin: 200px 0 0;
+}
+.visual_wrap .slide_container .slide1 .bnr_link .education_link {
+  color: #fff;
+  margin-right: 10px;
+  background-color: #000;
+  width: 238px;
+  display: inline-block;
+  text-align: center;
+  padding: 6px 24px;
+  border-radius: 40px;
+  line-height: 60px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.visual_wrap .slide_container .slide1 .bnr_link .news_btn {
+  width: 238px;
+  line-height: 60px;
+  display: inline-block;
+  text-align: center;
+  padding: 6px 24px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: 1px solid black;
+}
+.visual_wrap .page_btn {
+  display: flex;
+  flex-flow: row nowrap;
+  position: absolute;
+  bottom: 0%;
+}
+.visual_wrap .page_btn .bar {
+  border: 1px solid #000;
+  width: 120px;
+}
+
+/*# sourceMappingURL=main.css.map */
