@@ -1,0 +1,83 @@
+@charset "UTF-8";
+body {
+  background-color: paleturquoise;
+  min-width: 320px;
+  display: flex;
+  justify-content: center; /* 가로 가운데 */
+  align-items: center; /* 세로 가운데 */
+  min-height: 100vh; /* 화면 높이 전체 */
+  margin: 0;
+}
+body #bg .frame {
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+  width: 450px;
+  height: 800px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+body #bg .frame .top_bnr {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px;
+}
+body #bg .frame .top_bnr .profile {
+  display: flex;
+  align-items: center;
+}
+body #bg .frame .top_bnr .profile img {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+body #bg .frame .top_bnr .profile img span {
+  font-size: 0.9rem;
+}
+body #bg .frame .top_bnr .more {
+  font-size: 1.2rem;
+}
+body #bg .frame .image .scenery {
+  position: relative;
+}
+body #bg .frame .image .scenery img {
+  width: 450px;
+  height: 600px;
+}
+body #bg .frame .bot_bnr {
+  padding: 10px 10px;
+  display: flex;
+}
+body #bg .frame .bot_bnr .scrap {
+  font-size: 1.2rem;
+  margin-left: 290px;
+}
+body #bg .frame .bot_bnr .icons .interaction {
+  display: flex;
+  gap: 8px;
+}
+body #bg .frame .bot_bnr .icons .interaction img {
+  width: 24px;
+  height: 24px;
+}
+body #bg .frame .contents {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 5px;
+  padding: 0 10px;
+}
+body #bg .frame .contents .likes {
+  font-size: 1.2rem;
+}
+body #bg .frame .contents .name {
+  font-size: 1.2rem;
+}
+body #bg .frame .contents .comments {
+  font-size: 0.875rem;
+  color: dimgray;
+}
+body #bg .frame .contents .day {
+  font-size: 0.9rem;
+
+}
+
+/*# sourceMappingURL=main.css.map */

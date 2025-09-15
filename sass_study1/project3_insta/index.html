@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인스타그램 만들기</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/index.js" defer></script>
+    <style>
+        #bg {position: relative;}
+        #popup{ position: absolute;
+        top: 50%; 
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0; /* 0 → 1로 변경해서 보이게 */
+        z-index: 9999;
+        }
+        #popup svg{
+            fill:#fff;
+            stroke:#f5f5f5;
+            stroke-width: 10px;
+            transform: scale(0.5);
+            overflow: visible;
+        }
+    </style>
+</head>
+<body>
+    <!-- 팝업 -->
+    <div id="bg">
+        <div id="popup">
+            <svg width="175" height="171" viewBox="0 0 175 171" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M106.917 170.205V150.303C121.479 146.096 133.21 138.006 142.109 126.032C151.009 114.059 155.458 100.467 155.458 85.2574C155.458 70.0476 151.009 56.456 142.109 44.4824C133.21 32.5087 121.479 24.4185 106.917 20.2115V0.309433C126.981 4.83999 143.323 14.9933 155.944 30.7693C168.565 46.5454 174.875 64.708 174.875 85.2574C174.875 105.807 168.565 123.969 155.944 139.745C143.323 155.521 126.981 165.675 106.917 170.205ZM0.125 114.625V56.3751H38.9583L87.5 7.83339V163.167L38.9583 114.625H0.125ZM106.917 124.333V46.1813C114.522 49.741 120.468 55.0806 124.756 62.2001C129.044 69.3195 131.187 77.0862 131.187 85.5001C131.187 93.7522 129.044 101.397 124.756 108.436C120.468 115.475 114.522 120.774 106.917 124.333Z"/>
+            </svg>
+        </div>
+        <!-- 고정 -->
+        <div class="frame">
+            <div class="top_bnr">
+                <a href="#" class="profile"><img src="./images/profile.jpg"><span>Seungyae</span></a>
+                <a href="#" class="more">more</a> 
+            </div>
+            <div class="image">
+                <p class="scenery"><img src="./images/scenery.jpg"></p>
+            </div>
+            <div class="bot_bnr">
+                <div class="icons">
+                    <div class="interaction">
+                        <a href="#"><img src="./images/like_off.png"></a>
+                        <a href="#"><img src="./images/comment_off.png"></a>
+                        <a href="#"><img src="./images/paper_off.png"></a>
+                    </div>
+                </div>
+                <a href="#" class="scrap">scrap</a>
+            </div>
+            <div class="contents">
+                <p class="likes">100likes</p>
+                <p class="name">Seungyae</p>
+                <a href="#" class="comments">view all 20 comments</a>
+                <p class="day">3 Days Ago</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

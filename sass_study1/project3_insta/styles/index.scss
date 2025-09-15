@@ -1,0 +1,58 @@
+@use './common.scss' as *;
+body { @include body;
+    #bg {
+        .frame { @include frame;
+            box-shadow:5px 5px 15px rgba(0,0,0,0.5);
+            .top_bnr { display: flex;
+                justify-content: space-between; //양쪽 끝으로 
+                @include bnr_padding;
+                .profile { display: flex ;
+                    img { @include icon;
+                        margin-right: 5px;
+                        span { font-size: $font-size-m;
+                            display: inline-block;
+                            transform: translateY(-5px);
+                        }
+                    }
+                }
+                .more {
+                    font-size: $font-size-1;
+                }
+            }
+            .image {
+                .scenery {position: relative;
+                    img {
+                        width: 450px;
+                        height: 600px;
+                    }
+                }
+            }
+            .bot_bnr { 
+                padding: 10px 10px;
+                display: flex;
+                .scrap { 
+                    font-size: $font-size-1;;
+                    margin-left: 290px;
+                }
+                .icons {
+                    .interaction {
+                        display: flex;
+                        gap: 8px;
+                        a {}
+                        img {@include icon;}
+                    }
+                }
+            }
+        .contents {
+            display: flex; flex-flow: column nowrap;
+            gap: 5px;
+            padding: 0 10px;
+            .likes { font-size: $font-size-1;}
+            .name {font-size: $font-size-1; }
+            .comments {font-size: $font-size-s;
+            color: dimgray;}
+            .day {font-size: $font-size-m;}
+        }
+        }
+    }
+}
