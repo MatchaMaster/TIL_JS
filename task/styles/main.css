@@ -1,19 +1,28 @@
 body {
-    background-image:url(../images/baskground.jpg);
-    background-repeat: no-repeat; background-size: cover;
-    background-position: top;
+    background-color: #122b1d;
     min-width: 320px;
     display: flex;
     justify-content: center;  /* 가로 가운데 */
     align-items: center;      /* 세로 가운데 */
-    min-height: 80vh;        /* 화면 높이 전체 */
+    min-height: 100vh;        /* 화면 높이 전체 */
     margin: 0;
 }
+body h1 {
+     font-family: "Racing Sans One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #f8de6c;
+    display: flex; flex-flow:column ;
+    margin-bottom: 40px; margin-right:60px;
+    font-size: 3.125rem;
+    
+}
 #container {
-    background-color: aliceblue;
+    background-color: #a6bc7c;
     text-align: center; display: flex; flex-flow: column nowrap;
     width: 600px; height: 550px;
-    padding:15px 15px ;}
+    padding:15px 15px ;
+    border-radius: 15px;}
 #container .title {
     padding: 10px 10px;
     background-color: aquamarine;
@@ -21,20 +30,39 @@ body {
 #container .title h2{
 
 }
-.main { margin-top: 100px;
+.main { margin-top: 100px; display: flex;
+    flex-flow: column; align-items: center;
     }
+.hw_box {
+    display: flex;
+  flex-direction: column;
+  gap: 20px;  /* height / weight 박스 사이 간격 */
+}
 #container .height {
+    border-radius: 15px;
+    width: 400px;
     padding: 10px 10px;
-    background-color: aqua;}
+    background-color: beige;}
 #container .height .body_h {}
 #container .height #userHeight {background-color: bisque;}
 #container .weight {
-    padding: 10px 10px;background-color: aqua;}
+    border-radius: 15px;
+    width: 400px;
+    padding: 10px 10px; background-color: beige;}
 #container .weight .body_w {}
 #container .weight #userWeight{background-color: bisque;}
-#container .result_btn {background-color: aqua;
+#container .result_btn {background-color: beige;
+    border-radius: 15px;
+    width: 200px;
     padding: 10px 10px;
-margin-top: 50px;}
-#container .result_btn .btn {}
-#container .result {margin-top: 200px;}
+    margin-top: 50px;
+    margin: 50px auto 0;}
+#container .result_btn .btn {
+    color: #122b1d;
+    font-family: "Racing Sans One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.875rem;
+}
+#container .result {margin-top: 50px;}
 
