@@ -1,7 +1,9 @@
 body {
+    margin-top: 40px;
     background-color: #122b1d;
     min-width: 320px;
     display: flex;
+    flex-flow: column;
     justify-content: center;  /* 가로 가운데 */
     align-items: center;      /* 세로 가운데 */
     min-height: 100vh;        /* 화면 높이 전체 */
@@ -13,56 +15,92 @@ body h1 {
     font-style: normal;
     color: #f8de6c;
     display: flex; flex-flow:column ;
-    margin-bottom: 40px; margin-right:60px;
+    margin-bottom: 40px; 
     font-size: 3.125rem;
     
 }
+body h1:nth-child(1){animation: movingup3 1s alternate;}
+body h1:nth-child(2){animation: movingup2 2s alternate;}
+body h1:nth-child(3){animation: movingup1 3s alternate;}
 #container {
+    z-index: 999;
     background-color: #a6bc7c;
     text-align: center; display: flex; flex-flow: column nowrap;
-    width: 600px; height: 550px;
+    width: 600px; height: 400px;
     padding:15px 15px ;
     border-radius: 15px;}
 #container .title {
-    padding: 10px 10px;
-    background-color: aquamarine;
+    padding: 20px 10px;
+    
 }
 #container .title h2{
-
+    font-family: "Racing Sans One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
 }
-.main { margin-top: 100px; display: flex;
+.main { margin-top: 30px; display: flex;
     flex-flow: column; align-items: center;
     }
 .hw_box {
     display: flex;
-  flex-direction: column;
-  gap: 20px;  /* height / weight 박스 사이 간격 */
+    flex-direction: column;
+    gap: 20px;  /* height / weight 박스 사이 간격 */
+    align-items: center;
 }
-#container .height {
+
+.hw_box .height,
+.hw_box .weight {
+    display: flex;
+    justify-content: center; /* 가로 가운데 */
+    align-items: center;     /* 세로 가운데 */
     border-radius: 15px;
     width: 400px;
-    padding: 10px 10px;
-    background-color: beige;}
-#container .height .body_h {}
-#container .height #userHeight {background-color: bisque;}
-#container .weight {
-    border-radius: 15px;
-    width: 400px;
-    padding: 10px 10px; background-color: beige;}
-#container .weight .body_w {}
-#container .weight #userWeight{background-color: bisque;}
-#container .result_btn {background-color: beige;
+    height: 60px;
+    padding: 10px;
+    background-color: beige;
+}
+#container .height .body_h {
+    font-weight: 600;
+    margin-right: 10px;
+}
+#container .height #userHeight {background-color: beige;}
+#container .weight .body_w {
+    margin-right: 10px;
+    font-weight: 600;
+}
+#container .weight #userWeight{background-color: beige;}
+#container .result_btn {background-color: #122b1d;
     border-radius: 15px;
     width: 200px;
     padding: 10px 10px;
-    margin-top: 50px;
-    margin: 50px auto 0;}
+    margin-top: 20px;}
+#container .result_btn:active {
+    transform: scale(1.4); 
+    transition: transform 0.5s linear;
+}
 #container .result_btn .btn {
-    color: #122b1d;
+    color: beige;
     font-family: "Racing Sans One", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 1.875rem;
 }
-#container .result {margin-top: 50px;}
+#container .result {margin-top: 20px;}
+
+@keyframes movingup1{
+    0% { transform: translateY(200px); }
+    100% { transform: translateY(0px); }
+
+}
+@keyframes movingup2{
+    0% { transform: translateY(300px); }
+    100% { transform: translateY(0px); }
+
+}
+@keyframes movingup3{
+    0% { transform: translateY(600px); }
+    100% { transform: translateY(0px); }
+
+}
 
