@@ -10,7 +10,7 @@ body {
     margin: 0;
 }
 body h1 {
-     font-family: "Racing Sans One", sans-serif;
+    font-family: "Racing Sans One", sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #f8de6c;
@@ -19,9 +19,17 @@ body h1 {
     font-size: 3.125rem;
     
 }
-body h1:nth-child(1){animation: movingup3 1s alternate;}
-body h1:nth-child(2){animation: movingup2 2s alternate;}
-body h1:nth-child(3){animation: movingup1 3s alternate;}
+body h1:nth-child(1) {
+    animation: movingup3 1s ease forwards;
+}
+
+body h1:nth-child(2) {
+    animation: movingup2 2s ease forwards;
+    }
+
+body h1:nth-child(3) {
+    animation: movingup1 3s ease forwards;
+}
 #container {
     z-index: 999;
     background-color: #a6bc7c;
@@ -88,19 +96,17 @@ body h1:nth-child(3){animation: movingup1 3s alternate;}
 }
 #container .result {margin-top: 20px;}
 
-@keyframes movingup1{
-    0% { transform: translateY(200px); }
-    100% { transform: translateY(0px); }
 
-}
-@keyframes movingup2{
-    0% { transform: translateY(300px); }
-    100% { transform: translateY(0px); }
-
-}
-@keyframes movingup3{
-    0% { transform: translateY(600px); }
-    100% { transform: translateY(0px); }
-
-}
+@keyframes movingup3 {
+    from { opacity: 0; transform: translateY(600px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+@keyframes movingup2 {
+    from { opacity: 0; transform: translateY(300px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+@keyframes movingup1 {
+    from { opacity: 0; transform: translateY(200px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 

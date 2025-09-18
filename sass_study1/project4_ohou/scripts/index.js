@@ -50,3 +50,31 @@ thumnailAll[0].addEventListener('mouseover',()=>{
 //true == 로그인
 //false == 로그아웃
 localStorage.setItem('isLogin','true');
+
+//2.😁저장하기 버튼 클릭 시 로그인 유무에 따라 다른결과 실행
+const bookMark = document.querySelector('.product_info .scrap')
+let loginStatus = '';//상태가져오기 변수
+console.log(bookMark);
+
+//위 변수 이용한 조건 분기
+bookMark.addEventListener('click',()=>{
+    loginStatus = localStorage.getItem('isLogin')
+    console.log(loginStatus)
+    //로그인 시 wish.html로 이동
+    if(loginStatus == 'true'){
+        location.href = `./wish.html`
+        //로그아웃 시 login.html
+    }else{
+        location.href = `./login.html`
+    }
+})
+//3.리뷰 클릭시 스크롤 이동
+const reviewBtn = document.querySelector('.review')
+const reviewWrap = document.querySelector('.review_wrap')
+const proInfo = document.querySelector('.product_info')
+console.log(proInfo,reviewWrap,reviewBtn)
+reviewBtn.addEventListener('click',(e)=>{
+    //스크롤 이동 window 속성 scrollTo(x,y)
+    e.preventDefault()
+    window.scrollTo(0,reviewWrap.offsetTop) //off
+})
