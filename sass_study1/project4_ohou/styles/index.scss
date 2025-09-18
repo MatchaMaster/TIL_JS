@@ -292,7 +292,7 @@ body {
                         .original {color:$color-gray-light-lv1;}
                         .price_info {
                             position:relative;
-                            .info_icon {transform:translateY(4px); width:14px; fill:$color-white;}
+                            .info_icon {transform:translateY(4px); width:14px; fill:$color-white; stroke:$color-gray-medium;}
                             .info {
                                 width:300px; 
                                 @include pst-ab; left:50%; top:25px;

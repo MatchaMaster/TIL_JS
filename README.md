@@ -53,3 +53,17 @@
 * 브라우저가 닫히면 데이터 자동삭제
 * `sessionStorage.setItem('속성','값')`//값 true, false 대입
 * `sessionStorage.getItem('속성')`
+## 자주쓰는 JS속성과 함수 & TIP
+### 1개의 DOM요소에 이벤트 분기가 2개이상 있을 경우
+* 분기를 `true,false` 값을 가지는 변수 만들기
+* 이벤트 함수 내에 위 변수값 반전 형태 제작하기 `변수=!변수`
+* 변수에 따라 분기에 나눠 실행되는 조건문 `if` 제작하기
+### DOM요소 숨기기 & form 요소 비활성화 하기
+* DOM 요소 숨기기 : `dom.style.display = 'none'`
+* form>input,textarea,select 등 form 요소 비활성화 : `Dom.disabled = true(비활성화) or false(활성화)`
+* 위 비활성화 대상 : `input, textarea, select `등 form 관련요소
+### form관련 자주 쓰는 속성과 함수, 이벤트
+* `change`: select 태그를 변경 시 인식하는 이벤트 종류
+* `selectedIndex` : select 의 선택 option인덱스 확인 속성
+* `options[index]` : select 의 특정 option 확인 시 속성
+* 객체.속성, 객체 .options[], 객체.selectedIndex
