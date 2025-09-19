@@ -1,0 +1,80 @@
+/* body {
+    width: 1920px;
+    height: 1680px;
+}
+
+#container {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 1680px;
+    text-align: center;
+    background-color: aqua;
+    padding: 50px 40px;
+    margin: 0 auto;
+}
+#container .overview_img {}
+#container .overview_big {}
+#container .overview_big img {
+    width: 846px;
+    height: 846px;
+}
+#container .overview_img .thumnail {
+}
+#container .overview_img .thumnail a {
+
+}
+#container .overview_img .thumnail a img {
+    width: 100px;
+    height: 100px;
+}
+
+#container .contents {}
+#container .contents .point_word {}
+#container .contents .point_word h2 {}
+#container .contents .point_word h2:last-child {}
+
+#container .contents .title {}
+#container .contents .title h1 {}
+#container .contents .title p {}
+
+#container .contents .price_size {}
+#container .contents .price_size h2 {}
+#container .contents .price_size h2:last-child {}
+
+#container .contents .quantity {}
+#container .contents .quantity p {}
+#container .contents .quantity .quantity_num {}
+#container .contents .quantity .quantity_num .num {}
+#container .contents .quantity .quantity_num .num button {}
+#container .contents .quantity .quantity_num .num button:last-child {}
+#container .contents .quantity .quantity_num .num input {}
+
+#container .contents .purchase {}
+#container .contents .purchase fieldset {}
+#container .contents .purchase fieldset .onetime_p {}
+#container .contents .purchase fieldset .save_p {}
+#container .contents .purchase fieldset .every_p {}
+#container .contents .purchase fieldset .every2_p {}
+#container .contents .purchase fieldset .every3_p {}
+
+#container .contents .policy {}
+#container .contents .policy p {}
+#container .contents .policy p a {}
+
+#container .contents .cart {}
+#container .contents .cart_btn {}
+
+#container .contents .wishlist {}
+#container .contents .wishlist a{}
+#container .contents .wishlist img {}
+
+#container .info {}
+#container .info .summery {}
+#container .info .summery a {}
+#container .info .summery a img {}
+#container .info .summery a .sum_info{}
+
+#container .benefits {}
+#container .benefits a {}
+#container .benefits a img {}
+#container .benefits a .benefits_info {} */

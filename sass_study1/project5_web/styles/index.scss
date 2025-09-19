@@ -1,0 +1,137 @@
+@use './common.scss' as *;
+body {  background-color:yellow;
+        width: 1920px;
+        height: 1680px;
+        margin: 0 auto;
+    #container {
+        width: 1680px;
+        height: 1058px;
+        display: flex;
+        flex-flow: row nowrap;
+        background-color: aqua;
+        padding: 50px 40px;
+        gap: 50px;
+        
+        .overview_img {
+            width: 826px;
+            height: 826px;
+            background-repeat: no-repeat;
+            background-color: aquamarine;
+            .overview_big {
+                @include flex-row;
+                img {
+                    overflow: hidden;
+                    width: 826px;
+                    height: 826px;
+                }
+            }
+        }
+            .thumnail{
+                margin-top: 20px;
+                @include flex-row;
+                gap: 21px;
+                a {
+                    img{
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+            }
+/*             .back_forth {
+                a {
+                    img {}
+                }
+            } */
+        .contents { background-color: yellowgreen;
+            width: 672px;
+            .point_word {
+                @include flex-row;
+                gap:12px;
+                h2 {border-radius: 5px;
+                    padding: 2px 8px;
+                }
+                .new {
+                color: $color-white;
+                background-color: $color-new;}
+                .hydrate {
+                    color:$color-white;
+                    background-color:$color-hydrate ;
+                }
+            }
+            .title {
+                h1 {}
+                p {}
+            }
+            .price_size {
+                @include flex-row;
+                h2 {}
+                .price_25 {
+                    padding-right: 10px;
+                }
+                .bottle {}
+            }
+            .quantity {
+                p {}
+                .quantity_num {
+                    .num {
+                        #minus_btn {}
+                        #plus_btn {}
+                    }
+                }
+            }
+            .purchase { background-color: pink;
+                border-radius: 15px;
+                border: 1px solid black;
+                .onetime_p { 
+                    
+                    border-bottom: 1px solid black;
+                    padding: 22px 16px;
+                    
+                    #onetime {}
+                }
+                .month_box {
+                    
+                    padding: 22px 16px;
+                    .save_p {
+                        margin-bottom: 15px;
+                        .subs {}
+                    }
+                    .every_p {
+                        #every_m {}
+                    }
+                    .every2_p {
+                        #every_2 {}
+                    }
+                    .every3_p {
+                        #every_3 {}
+                    }
+                }
+            }
+            .policy {
+                p {
+                    a {}
+                }
+            }
+            .cart {
+                .cart_btn {}
+            }
+            .wishlist {
+                a {
+                    img {}
+                }
+            }
+            .info {
+                .summery {
+                    a {}
+                    .sum_info {}
+                }
+                .benefits {
+                    a {
+                        img {}
+                    }
+                    .benefits_info {}
+                }
+            }
+        }
+    }
+}

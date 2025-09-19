@@ -1,0 +1,7 @@
+<svg viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      
+      <g style="transform: rotate(180deg); transform-origin: center;">
+        <path class="chevron" d="M12.7615 1.26501L20.5 9.00357L12.7615 16.7421" stroke="currentColor" stroke-width="1.75"></path>
+        <path class="stem" d="M0 9L20.3091 9.00001" stroke="currentColor" stroke-width="1.75"></path>
+      </g>
+    </svg>

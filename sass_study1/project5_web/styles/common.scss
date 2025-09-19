@@ -1,0 +1,14 @@
+$color-new:#2E68BF;
+$color-hydrate:#35a8f1;
+$color-white:#ffff;
+
+@mixin flex-row{ 
+    display: flex;
+    flex-flow: row nowrap;
+
+}
+@mixin flex-col{ 
+    display: flex;
+    flex-flow: column nowrap;
+
+}
