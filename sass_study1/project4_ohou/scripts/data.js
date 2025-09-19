@@ -6,12 +6,12 @@ const productOptDB = [{
     color:['블랙','라즈베리'],
     size:['S','SM','L'],
     price:39900,
-    stoke:10,
+    stock:10,
 },{
     name:'40수호텔컬렉션',
     color: ['화이트','모카','크림'],
     size:['200','300','400'],
     price:[18500,9900],
-    stoke: 999,
+    stock: 999,
 }]
 

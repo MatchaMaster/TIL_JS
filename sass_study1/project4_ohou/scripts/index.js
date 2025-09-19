@@ -193,4 +193,65 @@ closeBtn.addEventListener('click',function(){
     colorSelect.selectedIndex = colorSelect.options[0]
     sizeSelect.selectedIndex = sizeSelect.options[0]
 })
-    //orderList.style.display = 'none';
+
+    //9. 주문목록 + 클릭 시 재고수량까지 수량+금액 표시
+    //필요: +버튼 , 재고수량(productOptDM[0].stock), 주문수량, 주문금액(orderPrice),증가 숫자 데이터
+    const plusBtn=document.querySelector('.num #plus_btn') //플러스버튼
+    const minusBtn=document.querySelector('#minus_btn') //마이너스버튼
+    const orderNum=document.querySelector('#order_num') //인풋저장//주문수량
+    const orderListPrice=document.querySelector('.order_list .price') //주문금액
+    //초기값: 주문수량칸에 값1 적용하기
+    let num = 1; //변경되는 변수저장(let)//초기주문 수량
+    orderNum.value = num; //input=value ,P=innerHtml
+    //+버튼 클릭시 /주문수량이 1씩 증가하고/ 주문수량에따라 가격(productOptDB.price)증가하기
+    plusBtn.addEventListener('click',()=>{
+        if(num < productOptDB[0].stock){/* if(프로덕스데이타.재고가 <= 10개일때){ 위에 숫자 주문수량 가져오기*/
+        num++;//숫자가 1씩증가한다.
+        orderNum.value = num //수량 숫자증가
+        let total = num * productOptDB[0].price //변수저장
+        orderListPrice.textContent = total.toLocaleString('ko-kr')
+        orderPrice. textContent = total.toLocaleString('ko-kr')
+        }else{
+            alert('최대 구매 수량입니다.')
+        }
+    }) 
+    //마이너스 버튼
+    //10. 주문목록 - 클릭 시 주문수량 + 주문금액 감소(1 이라면 경고창 출력)
+    minusBtn.addEventListener('click',()=>{
+        if( num > 1 ){ //숫자가 1보다 작아질때 최소구매수량 뜨게
+        num--;//숫자가 1씩감소한다.
+        minusPlusFunc() //함수호출
+        }else{
+            alert('최소 구매 수량입니다.')
+        }
+    })
+function minusPlusFunc(){//함수생성
+        let total = num * productOptDB[0].price //변수저장
+        orderNum.value = num
+        orderListPrice.textContent = total.toLocaleString('ko-kr')
+        orderPrice. textContent = total.toLocaleString('ko-kr')
+        return;
+    }
+//11. (상품 미선택 시 ) 장바구니, 바로구매 클릭 시 '상품선택하세요' 경고장 출력 
+const cartBtn = document.querySelector('#cart_btn')
+const buyBtn = document.querySelector('#buy_btn')
+console.log(cartBtn, buyBtn)
+cartBtn.addEventListener('click',()=>{
+    buycartBtn('./cart.html')
+})
+buyBtn.addEventListener('click',()=>{
+    buycartBtn('./buy.html')
+})
+function buycartBtn(url){
+    if(colorSelect.selectedIndex == 0 || sizeSelect.selectedIndex == 0){
+        alert('상품을 선택하세요.')//상품선택 안한걸 확인하는 조건문
+    }else{
+        loginStatus = localStorage.getItem('isLogin')
+        if(loginStatus == 'true'){
+            location.href = url//장바구니 페이지 이동(로그인유무에 따라) 무(로그인에 따라)
+        }
+        else{//근데 로그인이 안되어있다면~ 
+            location.href = './login.html'}
+    }
+}
+//12. 😁(상품 선택 시 ) 장바구니, 바로구매 클릭 시  로그인 유무에 따라 다른페이지로 이동
