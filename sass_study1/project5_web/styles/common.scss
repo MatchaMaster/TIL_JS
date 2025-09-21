@@ -12,3 +12,9 @@ $color-white:#ffff;
     flex-flow: column nowrap;
 
 }
+@mixin img100Percent {width:100%; height:auto;}
+@mixin overview {width:860px; height:860px;}
+@mixin thumnail {width:100px; height:100px;}
+@mixin icon48 {width:48px; height:48px;}
+@mixin icon24 {width:24px; height:24px; display:inline-block;}
+@mixin icon20 {width:20px; height:20px; display:inline-block;}

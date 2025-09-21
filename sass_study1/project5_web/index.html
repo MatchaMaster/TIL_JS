@@ -6,20 +6,43 @@
     <title>DIVE in clensing oil | torriden</title>
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/common.css">
-    <link rel="stylesheet" href="./styles/mian.css">
+    <link rel="stylesheet" href="./styles/main.css">
     <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
     <div id="container">
         <div class="overview_img">
             <div class="overview_big">
-                <img src="./images/main1.jpg" alt="">
+                <img src="./images/main1.jpg" alt="" class="active">
                 <img src="./images/main2.jpg" alt="">
                 <img src="./images/main3.jpg" alt="">
                 <img src="./images/main4.jpg" alt="">
                 <img src="./images/main5.jpg" alt="">
                 <img src="./images/main6.jpg" alt="">
                 <img src="./images/main7.jpg" alt="">
+                    <div class="btn_wraper">
+                        <div class="back_scroll">
+                            <button type="button" class="back_short_btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 22" fill="none">
+                                    <path d="M1.4375 21.125L11.5625 11L1.4375 0.875" stroke="currentColor" stroke-width="2.25"></path>
+                                </svg>
+                            </button>
+                                <button type="button" class="back_long_btn">
+                                    <svg viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="chevron" d="M12.7615 1.26501L20.5 9.00357L12.7615 16.7421" stroke="currentColor" stroke-width="1.75"></path>
+                                        <path class="stem" d="M0 9L20.3091 9.00001" stroke="currentColor" stroke-width="1.75"></path>
+                                    </svg>
+                                </button>
+                        </div>
+                        <div class="next_scroll">
+                            <button type="button" class="forth_short_btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 22" fill="none">
+                                    <path d="M1.4375 21.125L11.5625 11L1.4375 0.875" stroke="currentColor" stroke-width="2.25"></path>
+                                </svg>
+                            </button>
+                            <button type="button" class="forth_long_btn"><img src="./images/right_short.svg" alt=""></button>
+                        </div>
+                    </div>
             </div>
             <div class="thumnail">
                 <a href="#"><img src="./images/main1.jpg" alt=""></a>
@@ -30,10 +53,6 @@
                 <a href="#"><img src="./images/main6.jpg" alt=""></a>
                 <a href="#"><img src="./images/main7.jpg" alt=""></a>
             </div>
-<!--             <div class="back_forth">
-                <a href="#" class="back"><img src="./images/left_short.svg" alt=""></a></p>
-                <a href="#" class="forth"><img src="./images/right_short.svg" alt=""></a></p>
-            </div> -->
         </div>
         <div class="contents">
             <div class="point_word">
@@ -53,7 +72,7 @@
                 <div class="quantity_num">
                     <div class="num">
                         <button type="button" id="minus_btn">-</button>
-                        <input type="number" name="order_num" id="order_num">
+                        <input type="number" name="order_num" id="order_num" value="1">
                         <button type="button" id="plus_btn">+</button>
                     </div>
                 </div>
@@ -61,24 +80,30 @@
             <div class="purchase">
                 <fieldset>
                     <div class="onetime_p">
-                        <input type="radio" name="onetime" id="onetime">
-                        <label for="">One-time purchase $25.00 USD</label>
+                        <label>
+                            <input type="radio" name="onetime" id="onetime">
+                            One-time purchase
+                        </label>
+                        <div class="one_purchase">$25.00 USD</div>
                     </div>
                     <div class="month_box">
                         <div class="save_p">
-                            <span class="subs">Subscribe and save $22.50USD</span>
+                            <span class="subs">Subscribe and save</span>
+                             <span class="subs_purchase">$22.50USD</span>
                         </div>
-                        <div class="every_p">
-                            <input type="radio" name="every_m" id="every_m">
-                            <label for="">Deliver every month, 10% off</label>
-                        </div>
-                        <div class="every2_p">
-                            <input type="radio" name="every_2" id="every_2">
-                            <label for="">Deliver every 2 months, 7% off</label>
-                        </div>   
-                        <div class="every3_p">
-                            <input type="radio" name="every_3" id="every_3">
-                            <label for="">Deliver every 3 months, 5% off</label>
+                        <div class="months">
+                            <div class="every_p">
+                                <input type="radio" name="every_m" id="every_m">
+                                <label for="">Deliver every month, 10% off</label>
+                            </div>
+                            <div class="every2_p">
+                                <input type="radio" name="every_2" id="every_2">
+                                <label for="">Deliver every 2 months, 7% off</label>
+                            </div>   
+                            <div class="every3_p">
+                                <input type="radio" name="every_3" id="every_3">
+                                <label for="">Deliver every 3 months, 5% off</label>
+                            </div>
                         </div>
                     </div>
                 </fieldset>
@@ -101,14 +126,16 @@
                 </div>
                 <div class="benefits">
                     <a href="#">benefits<img src="#" alt="#"></a>
-                    <span class="benefits_info">
-                        Key Features:
-                        ✔ Hydration: Leaves skin feeling deeply hydrated and refreshed after cleansing <br>
-                        ✔ Pore-Deep Cleansing: Effectively removes makeup and clears pores with low‑molecular‑weight oil <br>
-                        ✔ Sebum Care: Melts away hardened sebum and buildup inside pores with gentle oil cleansing <br>
-                        ✔ Gentle Formula: Suitable even for sensitive skin <br>
-                        ✔ Texture: Light water-oil texture with a smooth glide and easy rinse-off, leaving no residue
-                    </span>
+                    <div class="benefits_info">
+                        <h2>Key Features:</h2>
+                        <span class="benefits_list">
+                            ✔ Hydration: Leaves skin feeling deeply hydrated and refreshed after cleansing <br>
+                            ✔ Pore-Deep Cleansing: Effectively removes makeup and clears pores with low‑molecular‑weight oil <br>
+                            ✔ Sebum Care: Melts away hardened sebum and buildup inside pores with gentle oil cleansing <br>
+                            ✔ Gentle Formula: Suitable even for sensitive skin <br>
+                            ✔ Texture: Light water-oil texture with a smooth glide and easy rinse-off, leaving no residue
+                        </span>
+                    </div>   
                 </div>
             </div>
         </div>

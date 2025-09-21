@@ -1,62 +1,77 @@
 @use './common.scss' as *;
-body {  background-color:yellow;
-        width: 1920px;
-        height: 1680px;
-        margin: 0 auto;
-    #container {
-        width: 1680px;
-        height: 1058px;
-        display: flex;
-        flex-flow: row nowrap;
-        background-color: aqua;
+
+body { background-color: yellow;
+    max-width:1680px; min-width:320px;
+     margin:0 auto;
+     #container {
+        @include flex-row;
+        justify-content: center; // 필요하면 중앙 정렬
+        gap: 40px;   
         padding: 50px 40px;
-        gap: 50px;
-        
-        .overview_img {
-            width: 826px;
-            height: 826px;
-            background-repeat: no-repeat;
-            background-color: aquamarine;
-            .overview_big {
-                @include flex-row;
+        .overview_img { background-color: aqua;
+             @include flex-col;
+             gap: 40px;
+            .overview_big { 
+                @include overview;
+                 position: relative;
                 img {
-                    overflow: hidden;
-                    width: 826px;
-                    height: 826px;
+                    
+                    display: none;
+                    @include img100Percent;
                 }
-            }
-        }
-            .thumnail{
-                margin-top: 20px;
-                @include flex-row;
-                gap: 21px;
-                a {
-                    img{
-                        width: 100px;
-                        height: 100px;
+                img.active {
+                    border-radius: 15px;
+                    display: block;
+                }
+                .btn_wraper {   
+                    
+                    .back_scroll {
+                        position: absolute;
+                         top: 50%;
+                         left: 10px;
+                         z-index: 3;
+                         transform: translateY(-50%);
+                        .back_short_btn {background-color: coral;
+                            @include icon48;
+                            svg {
+                               @include icon20;
+                                transform: scaleX(-1);
+                            }
+                        }
+                    }
+                    .next_scroll {
+                        position: absolute;
+                        top: 50%;
+                        right: 10px; // 오른쪽 끝
+                        transform: translateY(-50%); // 세로 가운데 정렬
+                        z-index: 3;
+                        .forth_short_btn {background-color: coral;
+                            @include icon48;
+                            svg {
+                                 @include icon20;
+                            }
+                        }
                     }
                 }
             }
-/*             .back_forth {
+            .thumnail {
+                width: 860px;
+                display: flex;
+                gap: 12px;
                 a {
-                    img {}
+                    img {
+                        border-radius: 15px;
+                        @include thumnail;
+                    }
                 }
-            } */
-        .contents { background-color: yellowgreen;
-            width: 672px;
-            .point_word {
-                @include flex-row;
-                gap:12px;
-                h2 {border-radius: 5px;
-                    padding: 2px 8px;
-                }
-                .new {
-                color: $color-white;
-                background-color: $color-new;}
-                .hydrate {
-                    color:$color-white;
-                    background-color:$color-hydrate ;
-                }
+            }
+        }
+        .contents { background-color: palegreen;
+            .point_word {@include flex-row;
+                gap: 12px;
+                h2 {}
+                .new { color: $color-white; background-color: $color-new; }
+                .hydrate { color: $color-white; background-color: $color-hydrate; }
             }
             .title {
                 h1 {}
@@ -65,45 +80,63 @@ body {  background-color:yellow;
             .price_size {
                 @include flex-row;
                 h2 {}
-                .price_25 {
-                    padding-right: 10px;
-                }
+                .price_25 {padding-right: 10px;}
                 .bottle {}
             }
             .quantity {
                 p {}
                 .quantity_num {
+                    width: 138px;
+                    height: 48px;
+                    display: inline-flex;
+                    background-color: #000;
+                    padding: 6px 10px;
+                    border-radius: 35px;
+                    justify-content: center;
+                    text-align: center;
                     .num {
-                        #minus_btn {}
-                        #plus_btn {}
+                        #order_num {
+                            background-color: #000;
+                            color: $color-white;
+                            height: 30px;
+                            text-align: center;
+                            width: 44px;
+                           
+                        }
+                        #minus_btn {color: $color-white;}
+                        #plus_btn {color: $color-white;}
                     }
                 }
             }
-            .purchase { background-color: pink;
+            .purchase {background-color: pink;
                 border-radius: 15px;
                 border: 1px solid black;
-                .onetime_p { 
-                    
+                .onetime_p {
+                    display: flex;
+                    justify-content: space-between;
                     border-bottom: 1px solid black;
-                    padding: 22px 16px;
-                    
-                    #onetime {}
+                    padding: 22px 16px; 
+                    #onetime {}                  
+                    .one_purchase {}                  
+
                 }
                 .month_box {
-                    
+                    @include flex-col;
+                   
                     padding: 22px 16px;
                     .save_p {
+                        display: flex;
+                        justify-content: space-between;
                         margin-bottom: 15px;
                         .subs {}
-                    }
-                    .every_p {
-                        #every_m {}
-                    }
-                    .every2_p {
-                        #every_2 {}
-                    }
-                    .every3_p {
-                        #every_3 {}
+                        .subs_purchase {}
+                            }
+                    .months {
+                        @include flex-col;
+                        gap: 10px;
+                        .every_p {}
+                        .every2_p {}
+                        .every3_p {}
                     }
                 }
             }
@@ -126,12 +159,19 @@ body {  background-color:yellow;
                     .sum_info {}
                 }
                 .benefits {
+                    @include flex-col;
                     a {
                         img {}
                     }
-                    .benefits_info {}
+                    .benefits_info {
+                        h2 {}
+                        .benefits_list {}  
+                    }
                 }
             }
         }
-    }
+     }    
 }
+
+
+
