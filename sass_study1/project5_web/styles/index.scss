@@ -1,19 +1,20 @@
 @use './common.scss' as *;
 
-body { background-color: yellow;
+body {
     max-width:1680px; min-width:320px;
-     margin:0 auto;
-     #container {
+    margin:0 auto;
+    #container {
         @include flex-row;
         justify-content: center; // 필요하면 중앙 정렬
         gap: 40px;   
         padding: 50px 40px;
         .overview_img { background-color: aqua;
-             @include flex-col;
-             gap: 40px;
+            @include flex-col;
+            gap: 30px;
             .overview_big { 
                 @include overview;
-                 position: relative;
+                position: relative;
+                overflow: hidden;
                 img {
                     
                     display: none;
@@ -24,18 +25,29 @@ body { background-color: yellow;
                     display: block;
                 }
                 .btn_wraper {   
-                    
+                    opacity: 1;
                     .back_scroll {
                         position: absolute;
-                         top: 50%;
-                         left: 10px;
-                         z-index: 3;
-                         transform: translateY(-50%);
-                        .back_short_btn {background-color: coral;
+                        top: 50%;
+                        left: 10px;
+                        z-index: 3;
+                        transform: translate(-70px, -50%);
+                        transition: transform 0.1s ease ;
+                        .back_short_btn {
+                            background-color: $color-white;
+                            border-radius: 50%;
                             @include icon48;
+                            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
                             svg {
-                               @include icon20;
+                                @include icon20;
                                 transform: scaleX(-1);
+                            }
+                        }
+                        .back_short_btn:hover {
+                            background-color: $color-white;
+                            border-radius: 50%;
+                            @include icon48;
+                            svg{
                             }
                         }
                     }
@@ -43,14 +55,31 @@ body { background-color: yellow;
                         position: absolute;
                         top: 50%;
                         right: 10px; // 오른쪽 끝
-                        transform: translateY(-50%); // 세로 가운데 정렬
+                        transform: translate(70px, -50%); // 세로 가운데 정렬
+                        transition: transform 0.1s ease ;
                         z-index: 3;
-                        .forth_short_btn {background-color: coral;
+                        .forth_short_btn {
+                            background-color: $color-white;
+                            border-radius: 50%;
+                            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
                             @include icon48;
                             svg {
-                                 @include icon20;
+                                @include icon20;
                             }
                         }
+                    }
+                }
+            }
+            &:hover .overview_big {
+                .btn_wraper{
+                    opacity: 1;
+                    .back_scroll {
+                        transform: translate(0px, -50%);
+                        transition: transform 0.1s ease ; 
+                    }
+                    .next_scroll {
+                        transform: translate(0px, -50%);
+                        transition: transform 0.1s ease ;;
                     }
                 }
             }
@@ -59,32 +88,73 @@ body { background-color: yellow;
                 display: flex;
                 gap: 12px;
                 a {
+                    height: 106px;
                     img {
                         border-radius: 15px;
                         @include thumnail;
                     }
                 }
+                .active{
+                }
+                .active::after{
+                    border-bottom: 2px solid #000;
+                    transform: scaleX(1);
+                    transition: transform ease-in-out 0.3s;
+                }
             }
+/*             .thumnail :active{
+                border-bottom: 2px solid #000;
+                transform: scaleX(1);
+                transition: transform ease-in-out 0.3s;
+            } */
         }
-        .contents { background-color: palegreen;
-            .point_word {@include flex-row;
+        .contents { 
+            .point_word {
+                @include flex-row;
                 gap: 12px;
-                h2 {}
+                h2 {
+                    margin: 0 0 12px;
+                    border-radius: 5px;
+                    padding: 2px 8px;
+                    font-size: $font-size-12;
+                }
                 .new { color: $color-white; background-color: $color-new; }
                 .hydrate { color: $color-white; background-color: $color-hydrate; }
             }
             .title {
-                h1 {}
-                p {}
+                h1 {
+                    font-weight: $weight-bold;
+                    margin: 0 0 6px;
+                    font-size: $font-size-30;
+                }
+                p {
+                    font-size: $font-size-17;
+                    color: $color-gray;
+                }
             }
             .price_size {
                 @include flex-row;
-                h2 {}
-                .price_25 {padding-right: 10px;}
-                .bottle {}
+                text-align: center;
+                padding: 10px 0 10px;
+                gap: 15px;
+                h2 {margin: 0;}
+                .price_25 {
+                    font-weight: $weight-semibold;
+                    font-size: $font-size-23;
+                    }
+                .bottle {
+                    color: $color-grayv2;
+                    padding-top: 8px;
+                    text-align: center;
+                    font-size: $font-size-14;
+                }
             }
             .quantity {
-                p {}
+                margin-bottom: 32px;
+                p {font-weight: $weight-semibold;
+                    font-size: $font-size-16;
+                    padding-bottom: 8px;
+                }
                 .quantity_num {
                     width: 138px;
                     height: 48px;
@@ -95,41 +165,56 @@ body { background-color: yellow;
                     justify-content: center;
                     text-align: center;
                     .num {
+                        @include flex-row;
                         #order_num {
                             background-color: #000;
                             color: $color-white;
                             height: 30px;
                             text-align: center;
                             width: 44px;
-                           
                         }
-                        #minus_btn {color: $color-white;}
-                        #plus_btn {color: $color-white;}
+                        #minus_btn {
+                            svg {
+                                @include icon18;
+                                color: $color-white;}
+                        }
+                        #plus_btn {
+                            svg{
+                                @include icon18;
+                                fill: $color-white;
+                            }
+                        }
                     }
                 }
             }
-            .purchase {background-color: pink;
+            .purchase {
+                font-size: $font-size-16;
                 border-radius: 15px;
-                border: 1px solid black;
+                border: 1px solid $color-grayv3;
                 .onetime_p {
                     display: flex;
                     justify-content: space-between;
-                    border-bottom: 1px solid black;
+                    border-bottom: 1px solid $color-grayv3;
                     padding: 22px 16px; 
-                    #onetime {}                  
-                    .one_purchase {}                  
+                    #onetime {}                               
+                    .one_purchase {
+                        color: $color-grayv3;
+                    }                  
 
                 }
                 .month_box {
                     @include flex-col;
-                   
                     padding: 22px 16px;
                     .save_p {
                         display: flex;
                         justify-content: space-between;
                         margin-bottom: 15px;
-                        .subs {}
-                        .subs_purchase {}
+                        .subs {
+                            color: $color-gray;
+                        }
+                        .subs_purchase {
+                            color: $color-gray;
+                        }
                             }
                     .months {
                         @include flex-col;
@@ -141,36 +226,122 @@ body { background-color: yellow;
                 }
             }
             .policy {
+                margin: 8px 0 36px;
                 p {
-                    a {}
+                    a {
+                        text-decoration : underline;
+                        text-underline-position:under;}
                 }
             }
             .cart {
-                .cart_btn {}
+                padding: 15px;
+                text-align: center;
+                background-color: $color-black;
+                    border-radius: 30px;
+                .cart_btn {
+                    color: $color-white;
+                    
+                }
             }
-            .wishlist {
+            .wishlist {text-align: center;
+                padding: 10px 10px;
+                margin: 15px 0;
                 a {
-                    img {}
+                    display: inline-flex;        // inline으로 유지하면서 flex 적용
+                align-items: center;         // 세로 가운데 정렬
+                gap: 6px;            
+                    .heart {@include icon18;
+                    }
+                    .add_wish {}
+                }
+            }
+            .blank_box{ 
+                @include flex-row;
+                justify-content: center;
+                gap: 14px;
+                margin: 20px 0px;
+                .box1 {
+                    border: 1px solid black;
+                    border-radius: 15px;
+                    background-color: $color-white;
+                    width: 148px;
+                    height:263px;
+                }
+                .box2 {
+                    border: 1px solid black;
+                    border-radius: 15px;
+                    background-color: $color-white;
+                    width: 148px;
+                    height:263px;
                 }
             }
             .info {
-                .summery {
-                    a {}
-                    .sum_info {}
+                border-top: 1px solid $color-gray;
+                padding-top: 20px;
+                a { @include flex-row;
+                    justify-content: space-between;
+                    .summery {
+                        
+                        padding-bottom: 16px;
+                        p {
+                            font-size: $font-size-19;
+                            font-weight: $weight-semibold;
+                        }
+                    }
+                    .sum_img { 
+                        @include icon14;
+                        svg { }
+                    }
+                }
+                .sum_info {
+                    font-size: $font-size-16;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.1s ease, padding 0.1s ease;
+                    span {}
+                }
+                &:hover .sum_info {
+                    max-height: 500px;
+                    padding: 10px;
                 }
                 .benefits {
-                    @include flex-col;
+                    border-top: 1px solid $color-gray;
+                    border-bottom: 1px solid $color-gray;
+                    padding: 16px 0;
+                    @include flex-col;;
+                    justify-content: center;
                     a {
-                        img {}
+                        font-size: $font-size-19;
+                            font-weight: $weight-semibold;
+                        display: flex;
+                        align-items: center; // 세로 가운데 맞춤
+                        gap: 6px;
+                        svg {
+                            @include icon14;
+                        }
+                    }
+                    &:hover .benefits_info {
+                        max-height: 500px;
+                        padding: 10px;
                     }
                     .benefits_info {
-                        h2 {}
-                        .benefits_list {}  
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: max-height 0.1s ease, padding 0.1s ease;
+                        h2 {
+                            padding-bottom: 10px;
+                            font-size: $font-size-16;
+                            font-weight: $weight-semibold;
+                        }
+                        .benefits_list {
+                            font-size: $font-size-16;
+                            text-align: left;
+                        }
                     }
                 }
             }
         }
-     }    
+    }    
 }
 
 

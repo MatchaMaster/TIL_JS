@@ -20,32 +20,32 @@
                 <img src="./images/main5.jpg" alt="">
                 <img src="./images/main6.jpg" alt="">
                 <img src="./images/main7.jpg" alt="">
-                    <div class="btn_wraper">
-                        <div class="back_scroll">
-                            <button type="button" class="back_short_btn">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 22" fill="none">
-                                    <path d="M1.4375 21.125L11.5625 11L1.4375 0.875" stroke="currentColor" stroke-width="2.25"></path>
+                <div class="btn_wraper">
+                    <div class="back_scroll">
+                        <button type="button" class="back_short_btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 22" fill="none">
+                                <path d="M1.4375 21.125L11.5625 11L1.4375 0.875" stroke="currentColor" stroke-width="2.25"></path>
+                            </svg>
+                        </button>
+                            <button type="button" class="back_long_btn">
+                                <svg viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="chevron" d="M12.7615 1.26501L20.5 9.00357L12.7615 16.7421" stroke="currentColor" stroke-width="1.75"></path>
+                                    <path class="stem" d="M0 9L20.3091 9.00001" stroke="currentColor" stroke-width="1.75"></path>
                                 </svg>
                             </button>
-                                <button type="button" class="back_long_btn">
-                                    <svg viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path class="chevron" d="M12.7615 1.26501L20.5 9.00357L12.7615 16.7421" stroke="currentColor" stroke-width="1.75"></path>
-                                        <path class="stem" d="M0 9L20.3091 9.00001" stroke="currentColor" stroke-width="1.75"></path>
-                                    </svg>
-                                </button>
-                        </div>
-                        <div class="next_scroll">
-                            <button type="button" class="forth_short_btn">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 22" fill="none">
-                                    <path d="M1.4375 21.125L11.5625 11L1.4375 0.875" stroke="currentColor" stroke-width="2.25"></path>
-                                </svg>
-                            </button>
-                            <button type="button" class="forth_long_btn"><img src="./images/right_short.svg" alt=""></button>
-                        </div>
                     </div>
+                    <div class="next_scroll">
+                        <button type="button" class="forth_short_btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 22" fill="none">
+                                <path d="M1.4375 21.125L11.5625 11L1.4375 0.875" stroke="currentColor" stroke-width="2.25"></path>
+                            </svg>
+                        </button>
+                        <button type="button" class="forth_long_btn"><img src="./images/right_short.svg" alt=""></button>
+                    </div>
+                </div>
             </div>
             <div class="thumnail">
-                <a href="#"><img src="./images/main1.jpg" alt=""></a>
+                <a href="#" class="active"><img src="./images/main1.jpg" alt=""></a>
                 <a href="#"><img src="./images/main2.jpg" alt=""></a>
                 <a href="#"><img src="./images/main3.jpg" alt=""></a>
                 <a href="#"><img src="./images/main4.jpg" alt=""></a>
@@ -71,9 +71,17 @@
                 <p>Quantity</p>
                 <div class="quantity_num">
                     <div class="num">
-                        <button type="button" id="minus_btn">-</button>
+                        <button type="button" id="minus_btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 2" fill="none">
+                                <path d="M0 1L16 1" stroke="currentColor" stroke-width="1.75"></path>
+                            </svg>
+                        </button>
                         <input type="number" name="order_num" id="order_num" value="1">
-                        <button type="button" id="plus_btn">+</button>
+                        <button type="button" id="plus_btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.13136 8.86821L7.13136 16H8.86794V8.86821H16L16 7.13163L8.86794 7.13163V1.46385e-07L7.13136 0L7.13136 7.13163L0 7.13163L0 8.86821H7.13136Z" ></path>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -115,17 +123,39 @@
                 <button type="button" class="cart_btn">Add to Cart</button>
             </div>
             <div class="wishlist">
-                <a href="#"><img src="" alt="">Add to wishlist</a>
+                <a href="#">
+                <svg class="heart" viewBox="0 0 64 64">
+                    <path d="M32.012,59.616c-1.119-.521-2.365-1.141-3.707-1.859a79.264,79.264,0,0,1-11.694-7.614C6.316,42,.266,32.6.254,22.076,0.244,12.358,7.871,4.506,17.232,4.5a16.661,16.661,0,0,1,11.891,4.99l2.837,2.889,2.827-2.9a16.639,16.639,0,0,1,11.874-5.02h0c9.368-.01,17.008,7.815,17.021,17.539,0.015,10.533-6.022,19.96-16.312,28.128a79.314,79.314,0,0,1-11.661,7.63C34.369,58.472,33.127,59.094,32.012,59.616Z"></path>
+                </svg>
+                <span class="add_wish">Add to wishlist</span>
+                </a>
+            </div>
+            <div class="blank_box">
+                <p class="box1"></p>
+                <p class="box2"></p>
             </div>
             <div class="info">
-                <div class="summery">
-                    <a href="#">summery<img src="#" alt="#"></a>
+                <a href="">
+                    <div class="summery">
+                        <p>summery</p>
+                    </div>
+                    <div class="sum_img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14" fill="none">
+                            <path d="M0.875 1.4375L11 11.5625L21.125 1.4375" stroke="currentColor" stroke-width="2.25"></path>
+                        </svg>
+                    </div>
+                </a>
+                <div class="sum_info">
                     <span class="sum_info">
                         A moisture cleansing oil with 8D multi low-molecular hyaluronic acid melts away makeup, pore cloggers and hydrates without leaving an oily residue.
                     </span>
                 </div>
                 <div class="benefits">
-                    <a href="#">benefits<img src="#" alt="#"></a>
+                    <a href="#">benefits
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14" fill="none">
+                            <path d="M0.875 1.4375L11 11.5625L21.125 1.4375" stroke="currentColor" stroke-width="2.25"></path>
+                        </svg>
+                    </a>
                     <div class="benefits_info">
                         <h2>Key Features:</h2>
                         <span class="benefits_list">
