@@ -16,13 +16,11 @@ body {
                 position: relative;
                 overflow: hidden;
                 img {
-                    
-                    display: none;
+                    display: inline-block;
                     @include img100Percent;
                 }
                 img.active {
                     border-radius: 15px;
-                    display: block;
                 }
                 .btn_wraper {   
                     opacity: 1;
@@ -142,6 +140,7 @@ body {
                 gap: 15px;
                 h2 {margin: 0;}
                 .price_25 {
+                    color: $color-navy;
                     font-weight: $weight-semibold;
                     font-size: $font-size-23;
                     }
@@ -248,13 +247,17 @@ body {
             .wishlist {text-align: center;
                 padding: 10px 10px;
                 margin: 15px 0;
-                a {
+                a {gap:10px;
                     display: inline-flex;        // inline으로 유지하면서 flex 적용
                 align-items: center;         // 세로 가운데 정렬
                 gap: 6px;            
                     .heart {@include icon18;
+                        fill:$color-white;
+                        stroke: #000;
+                        stroke-width: 1px;
                     }
-                    .add_wish {}
+                    .add_wish {
+                        }
                 }
             }
             .blank_box{ 
@@ -278,6 +281,8 @@ body {
                 }
             }
             .info {
+                border-top: 1px solid $color-gray;
+                border-bottom:1px solid $color-gray; ;
                 border-top: 1px solid $color-gray;
                 padding-top: 20px;
                 a { @include flex-row;
@@ -305,10 +310,10 @@ body {
                 &:hover .sum_info {
                     max-height: 500px;
                     padding: 10px;
+
                 }
                 .benefits {
                     border-top: 1px solid $color-gray;
-                    border-bottom: 1px solid $color-gray;
                     padding: 16px 0;
                     @include flex-col;;
                     justify-content: center;

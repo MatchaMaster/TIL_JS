@@ -23,13 +23,12 @@ body #container .overview_img .overview_big {
   overflow: hidden;
 }
 body #container .overview_img .overview_big img {
-  display: none;
+  display: inline-block;
   width: 100%;
   height: auto;
 }
 body #container .overview_img .overview_big img.active {
   border-radius: 15px;
-  display: block;
 }
 body #container .overview_img .overview_big .btn_wraper {
   opacity: 1;
@@ -159,6 +158,7 @@ body #container .contents .price_size h2 {
   margin: 0;
 }
 body #container .contents .price_size .price_25 {
+  color: #2a3f48;
   font-weight: 600;
   font-size: 1.438rem;
 }
@@ -264,6 +264,7 @@ body #container .contents .wishlist {
   margin: 15px 0;
 }
 body #container .contents .wishlist a {
+  gap: 10px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -271,6 +272,9 @@ body #container .contents .wishlist a {
 body #container .contents .wishlist a .heart {
   width: 18px;
   height: 18px;
+  fill: white;
+  stroke: #000;
+  stroke-width: 1px;
 }
 body #container .contents .blank_box {
   display: flex;
@@ -294,6 +298,8 @@ body #container .contents .blank_box .box2 {
   height: 263px;
 }
 body #container .contents .info {
+  border-top: 1px solid #636363;
+  border-bottom: 1px solid #636363;
   border-top: 1px solid #636363;
   padding-top: 20px;
 }
@@ -326,7 +332,6 @@ body #container .contents .info:hover .sum_info {
 }
 body #container .contents .info .benefits {
   border-top: 1px solid #636363;
-  border-bottom: 1px solid #636363;
   padding: 16px 0;
   display: flex;
   flex-flow: column nowrap;
