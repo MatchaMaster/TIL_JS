@@ -94,20 +94,23 @@ body {
                         @include thumnail;
                     }
                 }
-                .active{
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%; 
+                    height: 2px;
+                    background-color: #000;
+                    transform: scaleX(0);              // 처음엔 안 보이게
+                    transform-origin: center;          // 가운데에서 양옆으로
+                    transition: transform 0.3s ease-in-out;
                 }
-                .active::after{
-                    border-bottom: 2px solid #000;
+                &.active::after{
                     transform: scaleX(1);
-                    transition: transform ease-in-out 0.3s;
                 }
             }
-/*             .thumnail :active{
-                border-bottom: 2px solid #000;
-                transform: scaleX(1);
-                transition: transform ease-in-out 0.3s;
-            } */
-        }
+        }   
         .contents { 
             .point_word {
                 @include flex-row;
@@ -200,7 +203,6 @@ body {
                     .one_purchase {
                         color: $color-grayv3;
                     }                  
-
                 }
                 .month_box {
                     @include flex-col;
@@ -343,6 +345,3 @@ body {
         }
     }    
 }
-
-
-

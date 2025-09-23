@@ -105,17 +105,20 @@ body #container .overview_img .thumnail a img {
   width: 100px;
   height: 100px;
 }
-body #container .overview_img .thumnail .active::after {
-  border-bottom: 2px solid #000;
-  transform: scaleX(1);
-  transition: transform ease-in-out 0.3s;
+body #container .overview_img .thumnail::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
 }
-body #container .overview_img {
-  /*             .thumnail :active{
-                  border-bottom: 2px solid #000;
-                  transform: scaleX(1);
-                  transition: transform ease-in-out 0.3s;
-              } */
+body #container .overview_img .thumnail.active::after {
+  transform: scaleX(1);
 }
 body #container .contents .point_word {
   display: flex;
