@@ -24,45 +24,49 @@ body {
                 }
                 .btn_wraper {   
                     opacity: 1;
-                    .back_scroll {
-                        position: absolute;
-                        top: 50%;
-                        left: 10px;
-                        z-index: 3;
-                        transform: translate(-70px, -50%);
-                        transition: transform 0.1s ease ;
-                        .back_short_btn {
-                            background-color: $color-white;
-                            border-radius: 50%;
-                            @include icon48;
-                            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-                            svg {
-                                @include icon20;
-                                transform: scaleX(-1);
+                    .back{
+                        .back_scroll {
+                            position: absolute;
+                            top: 50%;
+                            left: 10px;
+                            z-index: 3;
+                            transform: translate(-70px, -50%);
+                            transition: transform 0.1s ease ;
+                            .back_short_btn {
+                                background-color: $color-white;
+                                border-radius: 50%;
+                                @include icon48;
+                                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+                                svg {
+                                    @include icon20;
+                                    transform: scaleX(-1);
+                                }
                             }
-                        }
-                        .back_short_btn:hover {
-                            background-color: $color-white;
-                            border-radius: 50%;
-                            @include icon48;
-                            svg{
+                            .back_short_btn:hover {
+                                background-color: $color-white;
+                                border-radius: 50%;
+                                @include icon48;
+                                svg{
+                                }
                             }
                         }
                     }
-                    .next_scroll {
-                        position: absolute;
-                        top: 50%;
-                        right: 10px; // 오른쪽 끝
-                        transform: translate(70px, -50%); // 세로 가운데 정렬
-                        transition: transform 0.1s ease ;
-                        z-index: 3;
-                        .forth_short_btn {
-                            background-color: $color-white;
-                            border-radius: 50%;
-                            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-                            @include icon48;
-                            svg {
-                                @include icon20;
+                    .next { background-color: aqua;
+                        .next_scroll {
+                            position: absolute;
+                            top: 50%;
+                            right: 10px; // 오른쪽 끝
+                            transform: translate(70px, -50%); // 세로 가운데 정렬
+                            transition: transform 0.1s ease ;
+                            z-index: 3;
+                            .forth_short_btn {
+                                background-color: $color-white;
+                                border-radius: 50%;
+                                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+                                @include icon48;
+                                svg {
+                                    @include icon20;
+                                }
                             }
                         }
                     }
@@ -306,11 +310,10 @@ body {
                     overflow: hidden;
                     transition: max-height 0.1s ease, padding 0.1s ease;
                     span {}
-                }
-                &:hover .sum_info {
-                    max-height: 500px;
-                    padding: 10px;
-
+                }        
+                .sum_info.open {
+                max-height: 500px; // 열릴 때 예상되는 높이보다 충분히 크게
+                padding: 16px 0;
                 }
                 .benefits {
                     border-top: 1px solid $color-gray;
@@ -327,10 +330,6 @@ body {
                             @include icon14;
                         }
                     }
-                    &:hover .benefits_info {
-                        max-height: 500px;
-                        padding: 10px;
-                    }
                     .benefits_info {
                         max-height: 0;
                         overflow: hidden;
@@ -344,6 +343,10 @@ body {
                             font-size: $font-size-16;
                             text-align: left;
                         }
+                    }
+                    .benefits_info.open {
+                    max-height: 500px; // 충분히 크게
+                    padding: 16px 0;
                     }
                 }
             }

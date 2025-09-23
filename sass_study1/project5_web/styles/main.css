@@ -33,7 +33,7 @@ body #container .overview_img .overview_big img.active {
 body #container .overview_img .overview_big .btn_wraper {
   opacity: 1;
 }
-body #container .overview_img .overview_big .btn_wraper .back_scroll {
+body #container .overview_img .overview_big .btn_wraper .back .back_scroll {
   position: absolute;
   top: 50%;
   left: 10px;
@@ -41,26 +41,29 @@ body #container .overview_img .overview_big .btn_wraper .back_scroll {
   transform: translate(-70px, -50%);
   transition: transform 0.1s ease;
 }
-body #container .overview_img .overview_big .btn_wraper .back_scroll .back_short_btn {
+body #container .overview_img .overview_big .btn_wraper .back .back_scroll .back_short_btn {
   background-color: white;
   border-radius: 50%;
   width: 48px;
   height: 48px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-body #container .overview_img .overview_big .btn_wraper .back_scroll .back_short_btn svg {
+body #container .overview_img .overview_big .btn_wraper .back .back_scroll .back_short_btn svg {
   width: 20px;
   height: 20px;
   display: inline-block;
   transform: scaleX(-1);
 }
-body #container .overview_img .overview_big .btn_wraper .back_scroll .back_short_btn:hover {
+body #container .overview_img .overview_big .btn_wraper .back .back_scroll .back_short_btn:hover {
   background-color: white;
   border-radius: 50%;
   width: 48px;
   height: 48px;
 }
-body #container .overview_img .overview_big .btn_wraper .next_scroll {
+body #container .overview_img .overview_big .btn_wraper .next {
+  background-color: aqua;
+}
+body #container .overview_img .overview_big .btn_wraper .next .next_scroll {
   position: absolute;
   top: 50%;
   right: 10px;
@@ -68,14 +71,14 @@ body #container .overview_img .overview_big .btn_wraper .next_scroll {
   transition: transform 0.1s ease;
   z-index: 3;
 }
-body #container .overview_img .overview_big .btn_wraper .next_scroll .forth_short_btn {
+body #container .overview_img .overview_big .btn_wraper .next .next_scroll .forth_short_btn {
   background-color: white;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   width: 48px;
   height: 48px;
 }
-body #container .overview_img .overview_big .btn_wraper .next_scroll .forth_short_btn svg {
+body #container .overview_img .overview_big .btn_wraper .next .next_scroll .forth_short_btn svg {
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -326,9 +329,9 @@ body #container .contents .info .sum_info {
   overflow: hidden;
   transition: max-height 0.1s ease, padding 0.1s ease;
 }
-body #container .contents .info:hover .sum_info {
+body #container .contents .info .sum_info.open {
   max-height: 500px;
-  padding: 10px;
+  padding: 16px 0;
 }
 body #container .contents .info .benefits {
   border-top: 1px solid #636363;
@@ -349,10 +352,6 @@ body #container .contents .info .benefits a svg {
   height: 14px;
   display: inline-block;
 }
-body #container .contents .info .benefits:hover .benefits_info {
-  max-height: 500px;
-  padding: 10px;
-}
 body #container .contents .info .benefits .benefits_info {
   max-height: 0;
   overflow: hidden;
@@ -366,6 +365,10 @@ body #container .contents .info .benefits .benefits_info h2 {
 body #container .contents .info .benefits .benefits_info .benefits_list {
   font-size: 1rem;
   text-align: left;
+}
+body #container .contents .info .benefits .benefits_info.open {
+  max-height: 500px;
+  padding: 16px 0;
 }
 
 /*# sourceMappingURL=main.css.map */

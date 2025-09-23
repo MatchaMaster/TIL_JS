@@ -2,10 +2,11 @@
 //스크롤 버튼 눌렀을때 이미지가 옆으로 넘어가야함
 document.body.style.backgroundColor = 'lightyellow'; // 페이지 열리자마자 배경색 변경->문제없음
 console.log('JS 연결 확인 완료!'); //확인
-const overViewBig = document.querySelector('.overview_big'); // 컨테이너
-const images = overViewBig.querySelectorAll('img');          // 큰이미지
-const backBtn = document.querySelector('.back_short_btn');   // 뒤 버튼
-const nextBtn = document.querySelector('.forth_short_btn');  // 앞으로 버튼
+
+const images = document.querySelectorAll('.overview_big img');
+const prevBtn = document.querySelector('.next');
+const nextBtn = document.querySelector('.back');
+console.log(images,prevBtn,nextBtn)
 
 //위시리스트누르면 하트색깔이 검정으로 바뀜
 const wishList = document.querySelector('.wishlist')
@@ -25,7 +26,7 @@ wishList.addEventListener('click', (e) => {
     } else {
         // 클릭 후 상태
         heartS.style.fill = 'black';
-        wishAdd.textContent = 'Added to wishlist';
+        wishAdd.textContent = 'In my wishlist';
     }
 });
 //주문수량 추가
@@ -39,7 +40,41 @@ plusBtn.addEventListener('click',()=>{
     orderNum.value = num //수량 숫자증가
 })
 minusBtn.addEventListener('click',()=>{
-    num--;//숫자가 1씩감소한다.
-    orderNum.value = num //수량 숫자감소
+    if(num > 1){   // 1보다 클 때만 감소
+        num--;
+        orderNum.value = num;
+    }
 })
 //나중에 음수표시 수정 필요함
+
+//아래 정보 클릭했을때 나오게
+const sumInfo = document.querySelector('.sum_info');  // 내용
+const beneInfo = document.querySelector('.benefits_info'); // 내용
+const sumBtn = document.querySelector('.summery'); // 클릭 영역
+const beneBtn = document.querySelector('.benefits a'); // 클릭 영역 (필요하면 수정)
+const summaryBtn = document.querySelector(".summery");
+const summaryInfo = document.querySelector(".first_info");
+
+summaryInfo.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (sumInfo.classList.contains("open")) {
+    sumInfo.classList.remove("open"); // 닫기
+  } else {
+    sumInfo.classList.add("open"); // 열기
+  }
+});
+
+// benefits
+const benefitsBtn = document.querySelector(".benefits > a");
+const benefitsInfo = document.querySelector(".benefits_info");
+
+benefitsBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (benefitsInfo.classList.contains("open")) {
+    benefitsInfo.classList.remove("open");
+  } else {
+    benefitsInfo.classList.add("open");
+  }
+});
