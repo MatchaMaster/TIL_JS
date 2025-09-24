@@ -9,6 +9,10 @@
   <style>
     /* 프로모션 배너 스타일 */
     #promoBanner {
+      position: relative;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
       width: 300px;
       margin: 50px auto; padding: 20px;
       background-color: #e74c3c; color: #fff;
@@ -32,5 +36,16 @@
     <p>최대 50% 할인 이벤트!</p>
     <button id="animateBtn" type="button">자세히 보기</button>
   </div>
+  <script>
+    const $proBnr = $('#promoBanner')
+      $proBnr.mouseover(function(){
+      $(this)
+      .animate({width:'330px',padding:'25px'},500)//확대
+      .animate({width:'300px',padding:'20px'},500)//축소
+      .animate({left:'50px'},400)//우 이동
+      .animate({left:'-50px'},400)//좌 이동
+    })
+    
+  </script>
 </body>
 </html>

@@ -34,6 +34,14 @@
             <button type="button" class="hide">닫기</button>
         </div>
     </div>
+<script>
+    const $showBtn = $('.show')
+    const $hideBtn = $('.hide')
+    const $desc = $('.description')
 
+    $desc.hide();
+    $showBtn.click(function(){$desc.show()})
+    $hideBtn.click(function(){$desc.hide()})
+</script>
 </body>
 </html>

@@ -61,3 +61,12 @@
   </ul>
 </body>
 </html>
+<script>  
+  const $menuItem = $('.menu-item')
+  const $subMenu = $('.submenu')
+  $subMenu.hide();
+  $menuItem.click(function(){
+    $subMenu.stop().slideUp(500);
+    $(this).next().slideDown(600);
+    })
+</script>

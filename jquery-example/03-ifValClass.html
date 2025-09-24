@@ -28,6 +28,28 @@
   <!-- 결과 메시지 영역 -->
   <div id="discountMessage" class="message"></div>
   <div id="totalPrice" class="message"></div>
+  <script>
 
+const $copInput = $('#couponInput');
+const $copBtn = $('#applyCoupon');
+const $disMsg = $('#discountMessage');
+const $totalPrice = $('#totalPrice');
+let price = 32000;
+
+$copBtn.click(function(){
+    if($copInput.val() === ''){
+        $disMsg.text('쿠폰코드를 입력해주세요');
+        $totalPrice.text('최종결제금액 :' + price + '원');
+    } else if($copInput.val() === 'DISCOUNT10'){
+        let discountedPrice = price  * 0.9; // 10% 할인
+        $disMsg.text('쿠폰 적용 성공! 10% 할인되었습니다.');
+        $totalPrice.text('최종결제금액 :' + discountedPrice + '원');
+    } else {
+        $disMsg.text('쿠폰번호가 다릅니다.');
+        $totalPrice.text('최종결제금액 :' + price + '원');
+    }
+});
+
+  </script>
 </body>
 </html>

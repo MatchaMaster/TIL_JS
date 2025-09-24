@@ -16,7 +16,7 @@
     #flashSaleBanner {
       position: fixed;
       top: 20px;
-      right: 0; /* 초기 위치 */
+      right: -300px; /* 초기 위치 */
       width: 300px;
       padding: 20px;
       background-color: #e74c3c;
@@ -53,6 +53,23 @@
     <p>모든 상품 20% 할인! 한정 기간 동안 진행됩니다.</p>
     <button id="closeBanner"  type="button">닫기</button>
   </div>
-
+  <script>
+    const $flashBnr = $('#flashSaleBanner')
+    const $closeBnr = $('#closeBanner')
+  
+    setTimeout(function(){ //화면 접속 2초 후 한번 실행될 내용
+      $flashBnr.animate({
+        right:0,
+      },500) //d애니메이션 속소 (몇초동안 실행)
+    },2000)//등장 딜레이값(몇초후에)
+    $closeBnr.click(function(){
+      $flashBnr.animate({
+        right:'-300px',
+      },500);
+    })
+  
+  
+  </script>
 </body>
 </html>
+

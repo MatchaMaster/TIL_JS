@@ -41,4 +41,24 @@
     <div id="content3" class="content">내용 3: 고객 지원 및 문의 안내</div>
   </div>
 </body>
+<script>  
+  const $title = $('.title')
+  const $content = $('.content')
+  $content.hide();
+  
+  $title.click(function(){
+    $content.stop().slideUp(400); //opacity + display 
+    $(this).next().show();
+    $(this).next().css('position','relative');
+    $(this).next().animate({
+      opacity:0.9,
+      height:'300px',
+      left:'50px',
+      top:'80px',
+      backgroundColor:'yellow',
+    },500);
+    $(this).next().get(0).style.transform = 'rotate(10deg)'
+    /* $(this).next().show(); *///block
+  })
+</script>
 </html>
