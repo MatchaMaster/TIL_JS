@@ -1,0 +1,43 @@
+
+body {
+    background-color: paleturquoise;
+    min-width: 320px;
+    display: flex;
+    justify-content: center; /* 가로 가운데 */
+    align-items: center; /* 세로 가운데 */
+    min-height: 100vh; /* 화면 높이 전체 */
+    margin: 0;
+}
+#wrap {
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    background-image: url(https://i.pinimg.com/736x/a8/01/20/a801208c504b2fc76a35730c4530e220.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 450px;
+    height: 600px;
+    justify-content: center;
+}
+#wrap .main {}
+#wrap .main .month {}
+#wrap .main .month #ur_month {
+    padding: 10px 10px;
+    background-color: wheat;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+}
+#wrap .main .btn {
+    margin-top: 60px;
+}
+#wrap .main .btn .chk_btn {
+    padding: 20px 15px;
+    background-color: wheat;
+    border-radius: 15px;
+
+}
+#wrap .main .result {
+    background-color: cornsilk;
+    margin-top: 60px;
+}
