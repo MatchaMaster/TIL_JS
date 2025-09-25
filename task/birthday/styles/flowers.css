@@ -1,6 +1,6 @@
 
 body {
-    background-color: paleturquoise;
+    background-color: cornsilk;
     min-width: 320px;
     display: flex;
     justify-content: center; /* 가로 가운데 */
@@ -18,26 +18,56 @@ body {
     width: 450px;
     height: 600px;
     justify-content: center;
+    border-radius: 15px;
 }
 #wrap .main {}
-#wrap .main .month {}
-#wrap .main .month #ur_month {
-    padding: 10px 10px;
-    background-color: wheat;
+#wrap .main .m_d_y {
+    display: flex;
+    gap: 13px;
+    justify-content: center;
+}
+#wrap .main .year #ur_year {
+    background-color: rgba(255, 220, 230, 0.75);
     text-align: center;
     color: white;
     border-radius: 15px;
+    width: 80px;
+    padding: 10px 0;
+}
+#wrap .main .date #ur_date {
+    background-color: rgba(255, 220, 230, 0.75);
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    width: 80px;
+    padding: 10px 0;
+}
+#wrap .main .month #ur_month {
+    background-color: rgba(255, 220, 230, 0.75);
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    width: 80px;
+    padding: 10px 0;
 }
 #wrap .main .btn {
     margin-top: 60px;
 }
 #wrap .main .btn .chk_btn {
     padding: 20px 15px;
-    background-color: wheat;
+    background-color: rgba(255, 220, 230, 0.75);
+    color: white;
     border-radius: 15px;
 
 }
 #wrap .main .result {
-    background-color: cornsilk;
-    margin-top: 60px;
+    padding: 10px;
+    background-color: rgba(253, 233, 176, 0.75);
+}
+input::placeholder {
+    color: white;
+}
+.flowerImg{
+    border-radius: 15px;
+    transition: 1s;
 }

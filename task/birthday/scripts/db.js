@@ -1,13 +1,3 @@
-/* 
-//내가 태어난 월을 넣고 
-//버튼을 눌렀을때
-//결과가 나온다.(내가 태어난 월에 따라서)
-document.body.style.backgroundColor = 'pink'; // 페이지 열리자마자 배경색 변경->문제없음
-console.log('JS 연결 확인 완료!'); //확인
-const chkBtn = document.querySelector('.chk_btn')//채크버튼
-const urMonth = document.querySelector('#ur_month')//월 입력
-const resultSee = document.querySelector('.result')//결과
-console.log(chkBtn,urMonth,resultSee)
 const birthday_flower = [
     {
         month:1,
@@ -72,45 +62,3 @@ const birthday_flower = [
         src:'https://i.pinimg.com/1200x/b1/2d/21/b12d21b74f32524d13e2bd9b63f1af74.jpg'
     }
 ] 
-/* chkBtn.addEventListener('click', () => {
-    let birthMonth = urMonth.value // 입력값 가져오기
-    birthMonth = Number(birthMonth) // 숫자로 변환
-
-    if (birthMonth >= 1 && birthMonth <= 12) {
-        const flowerInfo = birthday_flower[birthMonth - 1]
-        resultSee.innerText = `${flowerInfo.month}월의 탄생화는 ${flowerInfo.flower} 🌸 (${flowerInfo.content})`
-    } else {
-        resultSee.innerText = "1~12 사이의 숫자를 입력해주세요!"
-    }
-}) 
- */
-//초기세팅 결과숨기기, 공유버튼 숨기기 //제이쿼리는 i
-const $resultFlower = $('.result')
-const $resultBtn = $('.chk_btn')
-const $flowerImg = $('.flowerImg');
-//버튼 클릭시 배열 출력
-const $year = $('#ur_year')
-const $month = $('#ur_month')
-const $date= $('#ur_date')
-const $mdywrap = $('.m_d_y')
-$resultFlower.hide();
-$resultBtn.click(function(){
-    //조건? 참:거짓
-    console.log(Boolean($year.val()))
-    const ymd = $year.val() && $month.val() && $date.val()
-    ymd ?
-    flowerFunc():
-    alert('생년월일을 모두 입력해주세요');
-    function flowerFunc(){
-        const $userMonth = $month.val();
-        const $resultFlowerS = `${birthday_flower[$userMonth-1].flower}`
-        const $resultFlowerLang = `${birthday_flower[$userMonth-1].content}`
-        const resultFlowerSrc = `${birthday_flower[$userMonth-1].src}`
-        const resultTxt = $resultFlowerS + $resultFlowerLang
-        $resultFlower.show()
-        $resultBtn.hide()
-        $mdywrap.hide()
-        $resultFlower.text(resultTxt)
-        $flowerImg.attr('src',resultFlowerSrc).show();
-    } 
-})

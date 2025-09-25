@@ -6,18 +6,29 @@
     <title>탄생화와 꽃말</title>
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/flowers.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./scripts/flower.js" defer></script>
+    <script src="./scripts/db.js" defer></script>
 </head>
 <body>
     <div id="wrap">
         <div class="main">
-            <div class="month">
-                <input type="text" id="ur_month" placeholder="월 입력 (1~12)">
+            <div class="m_d_y">
+                <div class="year">
+                    <input type="text" id="ur_year" placeholder="Year">
+                </div>
+                <div class="month">
+                    <input type="text" id="ur_month" placeholder="Month">
+                </div>
+                <div class="date">
+                    <input type="text" id="ur_date" placeholder="Date">
+                </div>
             </div>
             <div class="btn">
                 <a href="#" class="chk_btn">탄생화/꽃말 확인해보기</a>
             </div>
-            <div class="result"></div>         
+            <img class="flowerImg" alt="탄생화" style="display:none; max-width:300px;">    
+            <div class="result"></div>     
         </div>
     </div>
 </body>
