@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math | JS</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <script src="./scripts/math.js" defer></script>
+</head>
+    <style>
+        body {background-color: pink;}
+        .min2{ background-color: blanchedalmond;}
+        .min_sort {background-color: paleturquoise;}
+    </style>
+<body>
+    <section class="min2">
+        <button type="button" id="price_btn">최저가 찾기</button>
+        <button type="button" id="delivery_btn">배송비무료찾기</button>
+        <p class="result1"></p>
+        <p class="result2"></p>
+        <h2>쇼핑몰별 최저가</h2>
+        <ul id="shop_list"><!-- js에서 li삽입위치 --></ul>
+    </section>
+    <section class="min_sort">
+        <button type="button" id="min_price_btn">최저가 찾기</button>
+        <p class="min_price">최저가가 여기 표시됩니다.</p>
+        <h2>쇼핑몰별 최고가</h2>
+        <ul id="shop_list2"></ul>
+    </section>
+    <section class="calc">
+        <p>총 금액 : <input type="number" id="price"></p>
+        <p>인원수 : <input type="number" id="person"></p>
+        <button type="button" id="total_btn">계산하기</button>
+        <p class="result">1명이낼 금액은<em></em>원 입니다.</p>
+    </section>
+    <section class="ad">
+        <a href="#"><img src="" alt=""></a>
+    </section>
+    <button type="button" id="coupon">할인쿠폰뽑기</button>
+</body>
+</html>
