@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scrollTrigger | JS</title>
+    <!-- scrollTrigger CDN(필수) -->
+    <link rel="stylesheet" href="./styles/reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <style>
+        body, html {
+            height: 300vh;
+            background:linear-gradient(wheat,lightgreen,green,darkgreen);
+        }
+        main .bg{ height: 90vh;overflow: hidden;}
+        main .bg img {width: 100%;}
+        main .bg2 img { transform: scale(1);}
+    </style>
+</head>
+<body>
+    <main>
+        <section class="bg bg1"><img src="https://i.pinimg.com/736x/9f/c4/d6/9fc4d6ec939c538b6157b136e1cabc4d.jpg" alt=""></section>
+        <section class="bg bg2"><img src="https://i.pinimg.com/1200x/c9/3c/fb/c93cfb823bf3cabd2c858f5774616fac.jpg" alt=""></section>
+        <section class="bg bg3"><img src="https://i.pinimg.com/1200x/30/58/cd/3058cd8e0524c07378329a23628a6172.jpg" alt=""></section>
+        <section class="bg bg4"><img src="https://i.pinimg.com/736x/9f/c4/d6/9fc4d6ec939c538b6157b136e1cabc4d.jpg" alt=""></section>
+
+    </main>
+    <script>
+        //DOMContentLoaded 이벤트 필요한 경우 : defer 없이 script룰 head에 작성한 경우
+        //document.addEventListener("DOMContentLoaded", (event) => {
+        gsap.registerPlugin(ScrollTrigger) //필수
+        //스크롤 트리거 작성 시작
+
+        //gsap.from('애니메이션 대상',{옵션:값, 옵션:값, 옵션:{옵션:값,},})
+        /*  gsap.from('애니메이션 대상',{
+                scrollTrigger:{trigger:'트리거발동기준'},
+                스크롤애니메이션 속성:값,
+                스크롤애니메이션 속성:값,
+        }) */
+    gsap.from('.bg2 img',{
+        scrollTrigger:{
+            trigger:'.bg2',
+            markers:true,
+            start:'top 80%',
+            scrub:true, //왔다갔다 반복가능
+        },
+        scale:2,
+        opacity: 1,
+        duration:3,
+    })
+        //스크롤 트리거 작성 종료
+//});
+    </script>
+</body>
+</html>
