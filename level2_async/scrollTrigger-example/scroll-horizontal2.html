@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동물의숲 | 가로스크롤트리거활용</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <style>
+        body {overflow-x: hidden;}
+        .box {}
+        .box img {width: 100vw;}
+        .container { display: flex; width:300vw ;position: relative;
+            background-attachment: fixed;}
+        .container img {width: 100vw;
+            background-size: cover;
+            }
+        .container h1 {
+            font-size: 5rem; color: whitesmoke;
+            top: 10%; left: 10%;
+            position: absolute;
+            text-align: center;
+            justify-content: center;
+            
+        }
+    </style>
+
+</head>
+<body>
+    <main>
+        <section class="box">
+            
+            <img src="../banyanTree_images/animal-crossing-new-horizons_3840x2160_xtrafondos.com.jpg" alt="">
+            
+        </section>
+        <section class="wrap wrap1">
+            <div class="container ">
+                <h1 class="intro">놀러와요 ! 동물의 숲</h1>
+                <img src="../banyanTree_images/thumb-1920-1366993.jpeg" alt="" class="first">
+                <img src="../banyanTree_images/cvo72mwgojm51.png" alt="">
+                <img src="../banyanTree_images/thumb-1920-1128604.jpg" alt="">
+            </div>
+        </section>
+        <section class="wrap wrap2">
+            <div class="container">
+                <h1 class="second">평화롭게 힐링하세요</h1>
+                <img src="../banyanTree_images/thumb-1920-1128604.jpg" alt="">
+                <img src="../banyanTree_images/Animal-Crossing-New-Horizons-394P-Wallpaper-3.webp" alt="">
+                <img src="../banyanTree_images/cute-hd-animal-crossing-fan-art-cover-ixb8oo2o1iadyyw5.jpg" alt="">
+            </div>
+        </section>
+    </main>
+        <script>
+            gsap.registerPlugin(ScrollTrigger)
+        const container=document.querySelector('.container')
+        const scrollW = container.offsetWidth - window.innerWidth 
+        console.log(container,scrollW)
+        //scrollTrigger
+        gsap.utils.toArray('.wrap').forEach((obj) => {
+            console.log(obj)
+            //timeline 애니메이션 관리 + fromTo 연결동작
+            const banyan = gsap.timeline({
+                scrollTrigger : { trigger:obj,
+                    start:'center center',
+                    end:()=>"+=" + scrollW,//가로스크롤 종료시점
+                    scrub:true,
+                    pin:true,
+                    anticipatePin:1, //권장옵션 (화면튀는 현상막기)
+                },defaults:{ease:'none'},
+            })
+            banyan.fromTo(obj.querySelector('.container'),{
+                x:0,
+            },{
+                x:-scrollW
+            })
+        });
+        gsap.fromTo('.intro', 
+    { opacity: 0, scale: 0.8 }, 
+    { 
+        opacity: 1, scale: 1.3, 
+        scrollTrigger: {
+            trigger: '.wrap',
+            start: "top center",
+            end: "bottom center",
+            scrub: true
+            }
+        }
+    );
+    gsap.fromTo('.second', 
+        { opacity: 0, y:100 }, 
+        { 
+            opacity: 1, y:0, 
+            scrollTrigger: {
+                trigger: '.wrap2',
+                start: "top center",
+                end: "bottom center",
+                scrub: true
+            }
+        }
+    );
+
+        </script>
+</body>
+</html>
